@@ -1,0 +1,295 @@
+[
+    {
+      "id": 1,
+      "name": "Product Name 1",
+      "price": 10,
+      "sale": 8,
+      "image": "http://localhost:3000/_nuxt/assets/img/product-1.png",
+      "sku": "BHJGFJH876",
+      "categories": [
+        {
+          "id":1,
+          "name": "Fruits"
+        },
+        {
+          "id":2,
+          "name": "Vegetables"
+        },
+        {
+          "id":3,
+          "name": "Others"
+        }
+      ],
+      "tags": [
+        {
+            "id": 1,
+            "name": "Tag 1"
+        },
+        {
+            "id": 2,
+            "name": "Tag 2"
+        },
+        {
+            "id": 3,
+            "name": "Tag 3"
+        }
+      ]
+    },
+
+
+    {
+      "id": 2,
+      "name": "Product Name 2",
+      "price": 10,
+      "sale": 8,
+      "image": "http://localhost:3000/_nuxt/assets/img/product-2.png",
+      "sku": "BHJGFJH878",
+      "categories": [
+        {
+          "id":1,
+          "name": "Fruits"
+        },
+        {
+          "id":2,
+          "name": "Vegetables"
+        },
+        {
+          "id":3,
+          "name": "Others"
+        }
+      ],
+      "tags": [
+        {
+            "id": 1,
+            "name": "Tag 1"
+        },
+        {
+            "id": 2,
+            "name": "Tag 2"
+        },
+        {
+            "id": 3,
+            "name": "Tag 3"
+        }
+      ]
+    },
+
+
+    {
+      "id": 3,
+      "name": "Product Name 3",
+      "price": 10,
+      "sale": 8,
+      "image": "http://localhost:3000/_nuxt/assets/img/product-3.png",
+      "sku": "BHJGFJH873",
+      "categories": [
+        {
+          "id":1,
+          "name": "Fruits"
+        },
+        {
+          "id":2,
+          "name": "Vegetables"
+        },
+        {
+          "id":3,
+          "name": "Others"
+        }
+      ],
+      "tags": [
+        {
+            "id": 1,
+            "name": "Tag 1"
+        },
+        {
+            "id": 2,
+            "name": "Tag 2"
+        },
+        {
+            "id": 3,
+            "name": "Tag 3"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "name": "Product Name 4",
+      "price": 10,
+      "sale": 8,
+      "image": "http://localhost:3000/_nuxt/assets/img/product-4.png",
+      "sku": "BHJGFJH876",
+      "categories": [
+        {
+          "id":1,
+          "name": "Fruits"
+        },
+        {
+          "id":2,
+          "name": "Vegetables"
+        },
+        {
+          "id":3,
+          "name": "Others"
+        }
+      ],
+      "tags": [
+        {
+            "id": 1,
+            "name": "Tag 1"
+        },
+        {
+            "id": 2,
+            "name": "Tag 2"
+        },
+        {
+            "id": 3,
+            "name": "Tag 3"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "name": "Product Name 5",
+      "price": 10,
+      "sale": 8,
+      "image": "http://localhost:3000/_nuxt/assets/img/product-5.png",
+      "sku": "BHJGFJH876",
+      "categories": [
+        {
+          "id":1,
+          "name": "Fruits"
+        },
+        {
+          "id":2,
+          "name": "Vegetables"
+        },
+        {
+          "id":3,
+          "name": "Others"
+        }
+      ],
+      "tags": [
+        {
+            "id": 1,
+            "name": "Tag 1"
+        },
+        {
+            "id": 2,
+            "name": "Tag 2"
+        },
+        {
+            "id": 3,
+            "name": "Tag 3"
+        }
+      ]
+    },
+    {
+      "id": 6,
+      "name": "Product Name 6",
+      "price": 10,
+      "sale": 8,
+      "image": "http://localhost:3000/_nuxt/assets/img/product-6.png",
+      "sku": "BHJGFJH876",
+      "categories": [
+        {
+          "id":1,
+          "name": "Fruits"
+        },
+        {
+          "id":2,
+          "name": "Vegetables"
+        },
+        {
+          "id":3,
+          "name": "Others"
+        }
+      ],
+      "tags": [
+        {
+            "id": 1,
+            "name": "Tag 1"
+        },
+        {
+            "id": 2,
+            "name": "Tag 2"
+        },
+        {
+            "id": 3,
+            "name": "Tag 3"
+        }
+      ]
+    },
+    {
+      "id": 7,
+      "name": "Product Name 7",
+      "price": 10,
+      "sale": 8,
+      "image": "http://localhost:3000/_nuxt/assets/img/product-2.png",
+      "sku": "BHJGFJH876",
+      "categories": [
+        {
+          "id":1,
+          "name": "Fruits"
+        },
+        {
+          "id":2,
+          "name": "Vegetables"
+        },
+        {
+          "id":3,
+          "name": "Others"
+        }
+      ],
+      "tags": [
+        {
+            "id": 1,
+            "name": "Tag 1"
+        },
+        {
+            "id": 2,
+            "name": "Tag 2"
+        },
+        {
+            "id": 3,
+            "name": "Tag 3"
+        }
+      ]
+    },
+    {
+      "id": 8,
+      "name": "Product Name 8",
+      "price": 10,
+      "sale": 8,
+      "image": "http://localhost:3000/_nuxt/assets/img/product-5.png",
+      "sku": "BHJGFJH878",
+      "categories": [
+        {
+          "id":1,
+          "name": "Fruits"
+        },
+        {
+          "id":2,
+          "name": "Vegetables"
+        },
+        {
+          "id":3,
+          "name": "Others"
+        }
+      ],
+      "tags": [
+        {
+            "id": 1,
+            "name": "Tag 1"
+        },
+        {
+            "id": 2,
+            "name": "Tag 2"
+        },
+        {
+            "id": 3,
+            "name": "Tag 3"
+        }
+      ]
+    }
+  ]
+  

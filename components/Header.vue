@@ -23,9 +23,9 @@
                     <nuxt-link class="bs-icon-box hover:bg-gray-200 inline-block flex items-center justify-center" to="/">
                         <span><fa :icon="['fa', 'heart']"/></span>
                     </nuxt-link>
-                    <nuxt-link class="relative mx-4" to="/">
+                    <nuxt-link class="relative mx-4" to="/cart">
                         <span class="bs-icon-box hover:bg-gray-200 inline-block flex items-center justify-center"><fa :icon="['fa', 'shopping-cart']"/></span>
-                        <span class="absolute bg-red-600 w-4 h-4 top-0 right-0 rounded-full text-xs flex justify-center items-center text-white">0</span>
+                        <span class="absolute bg-red-600 w-4 h-4 top-0 right-0 rounded-full text-xs flex justify-center items-center text-white">{{count}}</span>
                     </nuxt-link>
                     <nuxt-link class="flex items-center" to="/">
                         <span class="bs-icon-box hover:bg-gray-200 inline-block flex items-center justify-center"><fa :icon="['fa', 'user']"/></span>
@@ -116,6 +116,36 @@ export default {
         menuClose() {
             this.allCategoryMenu = false
         },
+
+
+
+     async   updateData(){
+           this.count = await this.$store.getters["cart/getCount"]; 
+    }
+
+
+    },
+
+    mounted(){
+        
+        this.$store.dispatch("cart/nuxtServerInit")
+        this.updateData();
+
+        this.$store.watch(
+            () => {
+                return  this.$store.getters["cart/getCart"]
+            },
+            (val) => {
+
+               this.updateData();
+
+                
+            },
+            {
+                deep:true
+            }
+        );
+    
     }
 }
 </script>

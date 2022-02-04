@@ -197,10 +197,10 @@
       </div>
 
 
-      <vue-slick-carousel class="category-carousel  mb-10 text-center" v-bind="productCarouselSettings">
+      <vue-slick-carousel  v-if="demoProducts.length" class="category-carousel  mb-10 text-center"  v-bind="productCarouselSettings">
        
 
-        <div v-for="item in 10"  :key="item">
+        <div v-for="item in demoProducts"  :key="item.id">
            <SingleProduct  :product="item" />
         </div>
 
@@ -342,20 +342,25 @@
 
 <script>
 
-import SingleProduct from '../components/SingleProduct.vue'
+import demoProducts from '../assets/demo-products.json';
+
 
 export default {
   name: 'IndexPage',
   data (){
     return {
       categoryCarouselSettings:{
-        "slidesToShow":6,
+        "slidesToShow": 6,
         
       },
       productCarouselSettings:{
-         "slidesToShow":4,
-      }
+         "slidesToShow": 4,
+      },
+      demoProducts: [],
     }
+  },
+  mounted(){
+    this.demoProducts = demoProducts;
   }
 }
 </script>

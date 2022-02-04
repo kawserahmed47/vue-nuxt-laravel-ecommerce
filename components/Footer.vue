@@ -132,11 +132,12 @@
 
                 <div class="flex -mx-8">
                 <div class="w-1/2 px-8">
-                    <img :src="product.image"/>
+                    <!-- <img :src="getImgUrl(product.image)" /> -->
+                    <img :src="product.image" />
                 </div>
                 <div class="w-1/2 px-8">
                     <p class="text-sm mb-3"><span class="uppercase text-gray-400 pr-6">Status</span> <span class="bs-dark-green-color">In Stock</span></p>
-                    <h3 class="text-2xl"> Product {{product}}</h3>
+                    <h3 class="text-2xl"> Product {{product.name}}</h3>
                     <p class="text-xs text-gray-400 mb-4 mt-2"><b>7</b> items available.</p>
                     <p class="text-2xl font-bold">${{ product.sale }} <del class="font-normal text-gray-400">${{ product.price }}</del></p>
                     <div class="flex my-6">
@@ -145,7 +146,9 @@
                     </div>
 
                     <div class="flex border-b border-gray-200 justify-between text-sm pb-3 mb-8">
-                    <p class="flex items-center"> Add to favourites</p>
+                    <p class="flex items-center"><span><fa :icon="['fa', 'heart']"/></span>
+                        Add to favourites
+                    </p>
                     <p class="flex items-center">
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mr-3" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z" />
@@ -158,12 +161,12 @@
                     <p><span class="uppercase text-gray-400 w-20 inline-block">Sku:</span> {{ product.sku }}</p>
                     <p><span class="uppercase text-gray-400 w-20 inline-block">category:</span>
 
-                        <!-- <span v-for="item in product.categories"><nuxt-link class="bs-dark-green-color" :to="'category/' + item.name">{{item.name}}</nuxt-link><span class="comma">, </span></span> -->
+                        <span v-for="item in product.categories" :key="item.id" ><nuxt-link class="bs-dark-green-color" :to="'category/' + item.name">{{item.name}}</nuxt-link><span class="comma">, </span></span>
                     </p>
 
                     <p><span class="uppercase text-gray-400 w-20 inline-block">tags:</span>
 
-                        <!-- <span v-for="item in product.tags"><nuxt-link class="bs-dark-green-color" :to="'category/' + item.name">{{item.name}}</nuxt-link><span class="comma">, </span></span> -->
+                        <span v-for="item in product.tags" :key="item.id" ><nuxt-link class="bs-dark-green-color" :to="'category/' + item.name">{{item.name}}</nuxt-link><span class="comma">, </span></span>
                     </p>
                     </div>
                 </div>
@@ -193,11 +196,23 @@ export default {
 
         modalClose() {
             this.$store.dispatch("product-details-modal/resetModal");
-        }
+        },
+
+        getImgUrl(pic) {
+            try {
+                return require('../assets/img/product-'+pic+'.png');
+            } catch (ex) {
+                return require('../assets/img/product-1.png');
+            }
+            
+        },
+
+
 
     },
 
     mounted() {
+
 
         this.$store.watch( () => {
                 return this.$store.getters["product-details-modal/getModal"]
