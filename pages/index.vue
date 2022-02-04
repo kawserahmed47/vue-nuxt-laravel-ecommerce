@@ -93,7 +93,7 @@
 
     <div class="container mx-auto mt-20">
 
-      <h3 class="text-4xl mb-6">Search By Category</h3>
+      <h3 class="text-4xl mb-6">Search by category</h3>
 
       <div class="flex items-center mb-10">
 
@@ -152,13 +152,13 @@
           <h4 class="text-xl text-center">Groceries</h4>
         </div>
 
-        <template #prevArrow="arrowOption">
+        <template #prevArrow="">
           <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
           </svg>
         </template>
 
-        <template #nextArrow="arrowOption">
+        <template #nextArrow="">
           <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
           </svg>
@@ -189,8 +189,38 @@
         </div>
 
 
+      <h3 class="text-4xl mb-6">Deals of the week</h3>
 
-      <h3 class="text-4xl mb-6">Popular Brands</h3>
+      <div class="flex items-center mb-10">
+        <div class="w-32 bs-dark-green-bg" style="height:3px"></div>
+        <div class="w-full bg-gray-200" style="height: 2px"></div>
+      </div>
+
+
+      <vue-slick-carousel class="category-carousel  mb-10 text-center" v-bind="productCarouselSettings">
+       
+
+        <div v-for="item in 10"  :key="item">
+           <SingleProduct  :product="item" />
+        </div>
+
+        <template #prevArrow="">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+          </svg>
+        </template>
+
+        <template #nextArrow="">
+          <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+          </svg>
+        </template>
+
+      </vue-slick-carousel>
+
+
+
+      <h3 class="text-4xl mb-6">Popular brands</h3>
 
       <div class="flex items-center mb-10">
 
@@ -242,13 +272,13 @@
           </div>
         </div>
 
-        <template #prevArrow="arrowOption">
+        <template #prevArrow="">
           <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
           </svg>
         </template>
 
-        <template #nextArrow="arrowOption">
+        <template #nextArrow="">
           <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
           </svg>
@@ -263,7 +293,7 @@
               <div class="w-2/3">
                 <p class="bs-dark-orange-color text-2xl mb-6">Buy 1 Get 1</p>
                 <h3 class="font-bold font-size-46 mb-8 leading-tight">Fresh Fruits Collection</h3>
-                <nuxt-link to="/" class="bg-white bs-dark-orange-color bs-button text-base inline-block bs-rounded-full-btn px-6 py-2"><fa :icon="['fa', 'arrow-right']"/> </nuxt-link>
+                <nuxt-link to="/" class="bg-white bs-dark-orange-color bs-button text-base inline-block bs-rounded-full-btn py-4 px-4"><fa :icon="['fa', 'arrow-right']"/> </nuxt-link>
               </div>
             </div>
           </div>
@@ -273,7 +303,7 @@
               <div class="w-2/3">
                 <p class="bs-dark-orange-color text-2xl mb-6">Buy 1 Get 1</p>
                 <h3 class="font-bold font-size-46 mb-8 leading-tight">Fresh Fruits Collection</h3>
-                <nuxt-link to="/" class="bg-white bs-dark-orange-color bs-button text-base inline-block bs-rounded-full-btn px-6 py-2" > <fa :icon="['fa', 'arrow-right']"/> </nuxt-link>
+                <nuxt-link to="/" class="bg-white bs-dark-orange-color bs-button text-base inline-block bs-rounded-full-btn py-4 px-4 " > <fa :icon="['fa', 'arrow-right']"/> </nuxt-link>
               </div>
             </div>
           </div>
@@ -283,7 +313,7 @@
               <div class="w-2/3">
                 <p class="bs-dark-orange-color text-2xl mb-6">Buy 1 Get 1</p>
                 <h3 class="font-bold font-size-46 mb-8 leading-tight">Fresh Fruits Collection</h3>
-                <nuxt-link to="/" class="bg-white bs-dark-orange-color bs-button text-base inline-block bs-rounded-full-btn px-6 py-2"> <fa :icon="['fa', 'arrow-right']"/> </nuxt-link>
+                <nuxt-link to="/" class="bg-white bs-dark-orange-color bs-button text-base inline-block bs-rounded-full-btn py-4 px-4"> <fa :icon="['fa', 'arrow-right']"/> </nuxt-link>
               </div>
             </div>
           </div>
@@ -312,6 +342,8 @@
 
 <script>
 
+import SingleProduct from '../components/SingleProduct.vue'
+
 export default {
   name: 'IndexPage',
   data (){
@@ -319,6 +351,9 @@ export default {
       categoryCarouselSettings:{
         "slidesToShow":6,
         
+      },
+      productCarouselSettings:{
+         "slidesToShow":4,
       }
     }
   }

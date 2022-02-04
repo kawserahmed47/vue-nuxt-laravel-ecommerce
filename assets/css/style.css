@@ -123,4 +123,24 @@ body{
 
   .bs-rounded-full-btn{
     border-radius:50%;
+    height: 50px;
+    width: 50px;
   }
+
+  .product-img-hover {
+    display: none;
+  }
+  
+  .single-bs-product:hover .product-img-hover {
+    display: flex;
+  }
+
+
+  .bs-modal-body {
+    max-width: 1000px;
+  }
+  
+  span:last-child span.comma {
+    @apply hidden
+  }
+  

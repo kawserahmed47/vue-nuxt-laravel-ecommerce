@@ -35,8 +35,12 @@
            </div>
 
            <div class="flex items-center">
-               <div class="w-96">
-                   <div class="bs-dark-green-bg flex rounded-full px-4 py-2 cursor-pointer">
+
+
+               <div v-click-outside="menuClose" class="w-96 relative">
+
+
+                   <div @click.prevent="menuClick" class="bs-dark-green-bg relative z-20 flex rounded-full px-4 py-2 cursor-pointer">
                        <div class="min-w-max text-white">
                             <span><fa :icon="['fa', 'list']"/></span>
                        </div>
@@ -47,7 +51,28 @@
                             <span><fa :icon="['fa', 'angle-down']"/></span>
                        </div>
                    </div>
+
+                   <div v-bind:class="allCategoryMenu ? 'block visible' : 'hidden invisible'" class="absolute bs-dark-green-bg z-10 w-full -mt-5 pt-6 pb-4 rounded-b-2xl">
+                        <ul>
+                        <li><nuxt-link class="block text-white py-2 px-4 hover:text-black" to="/">Fruits</nuxt-link></li>
+                        <li><nuxt-link class="block text-white py-2 px-4 hover:text-black" to="/">Vegetables</nuxt-link></li>
+                        <li><nuxt-link class="block text-white py-2 px-4 hover:text-black" to="/">Lorem ispum category</nuxt-link></li>
+                        <li><nuxt-link class="block text-white py-2 px-4 hover:text-black" to="/">Lorem ispum category</nuxt-link></li>
+                        <li><nuxt-link class="block text-white py-2 px-4 hover:text-black" to="/">Lorem ispum category</nuxt-link></li>
+                        <li><nuxt-link class="block text-white py-2 px-4 hover:text-black" to="/">Lorem ispum category</nuxt-link></li>
+                        <li><nuxt-link class="block text-white py-2 px-4 hover:text-black" to="/">Lorem ispum category</nuxt-link></li>
+                        <li><nuxt-link class="block text-white py-2 px-4 hover:text-black" to="/">Lorem ispum category</nuxt-link></li>
+                        <li><nuxt-link class="block text-white py-2 px-4 hover:text-black" to="/">Lorem ispum category</nuxt-link></li>
+                        <li><nuxt-link class="block text-white py-2 px-4 hover:text-black" to="/">Lorem ispum category</nuxt-link></li>
+                        <li><nuxt-link class="block text-white py-2 px-4 hover:text-black" to="/">Lorem ispum category</nuxt-link></li>
+                        </ul>
+                    </div>
+
+
                </div>
+
+
+
                <div class="w-full">
                    <ul class="flex justify-center">
                         <li><nuxt-link class="p-4" to="/">Home</nuxt-link></li>
@@ -56,9 +81,6 @@
                         <li><nuxt-link class="p-4" to="/">Contact</nuxt-link></li>
                         <li><nuxt-link class="p-4" to="/">FAQs</nuxt-link></li>
                         <li><nuxt-link class="p-4" to="/">Offers</nuxt-link></li>
-
-
-
                    </ul>
                </div>
 
@@ -79,7 +101,22 @@
 
 <script>
 export default {
-    name: 'Header'
+    name: 'Header',
+    data() {
+        return {
+        allCategoryMenu: false,
+        count: 0
+        }
+    },
+
+    methods: {
+        menuClick() {
+            this.allCategoryMenu = !this.allCategoryMenu;
+        },
+        menuClose() {
+            this.allCategoryMenu = false
+        },
+    }
 }
 </script>
 
