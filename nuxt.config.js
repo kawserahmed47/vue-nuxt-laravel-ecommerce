@@ -28,6 +28,8 @@ export default {
   plugins: [
     {src: '~/plugins/vue-slick-carousel', ssr:true},
     {src: '~/plugins/v-click-outside', ssr: false},
+    {src: '~/plugins/vue-toastification', ssr: false},
+
 
   ],
 
@@ -52,6 +54,11 @@ export default {
 
   // Modules: https://go.nuxtjs.dev/config-modules
   modules: [
+
+    ["vue-toastification/nuxt", {
+      timeout: 2000,
+      draggable: true
+    }]
   ],
 
   // Build Configuration: https://go.nuxtjs.dev/config-build

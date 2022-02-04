@@ -127,7 +127,7 @@ export default {
     },
 
     mounted(){
-        
+
         this.$store.dispatch("cart/nuxtServerInit")
         this.updateData();
 

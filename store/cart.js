@@ -37,9 +37,13 @@ export const state = () => ({
           if(data.type === 'minus') {
             if(getProductsLocalStorage[index].quantity > 1) {
               getProductsLocalStorage[index].quantity = getProductsLocalStorage[index].quantity - 1;
+
+              this.$toast.success('Updated to cart!');
+
             }
           } else {
             getProductsLocalStorage[index].quantity = getProductsLocalStorage[index].quantity + 1;
+            this.$toast.success('Added to cart!');
           }
 
         }
@@ -87,6 +91,7 @@ export const state = () => ({
         localStorage.setItem('cart', JSON.stringify(getProductsLocalStorage))
     
         state.cart = getProductsLocalStorage;
+        this.$toast.success('Removed from cart!');
     
     }
 
@@ -110,7 +115,8 @@ export const state = () => ({
             await  commit('UPDATE_CART', localCartData)
         }
 
-        await  commit('ADD_TO_CART', product)
+        await  commit('ADD_TO_CART', product);
+
     },
 
 

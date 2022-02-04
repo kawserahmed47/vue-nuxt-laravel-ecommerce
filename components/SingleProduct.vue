@@ -67,11 +67,22 @@ export default {
     this.$store.dispatch("product-details-modal/triggerModal", this.product)
   },
 
-  addToCart(product, type){
-    this.$store.dispatch("cart/addToCart", {
+async  addToCart(product, type){
+
+  try {
+   await this.$store.dispatch("cart/addToCart", {
           product: product,
           type: type
         })
+
+
+  } catch (error) {
+
+    this.$toast.error("Failed! Try again...");
+
+  }
+  
+    
   },
 
 
